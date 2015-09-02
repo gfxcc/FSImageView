@@ -31,7 +31,15 @@ Copy the source files into your project.
     FSImageView *fullSizeImage = [[FSImageView alloc] initWithBounds:self.view.bounds SuperView:self.view ImageView:cell.icon Image:cell.icon.image];
     fullSizeImage.delegate = self;
     [self.view addSubview:fullSizeImage];
-```
+```objective-c
+
+# delegate
+```objective-c
+    // call after original imageView tapped
+    - (void) originalImageViewTapped;
+    // call after full size imageView tapped
+    - (void) fullSizeViewTapped;
+```objective-c
 
 ## Author
 
