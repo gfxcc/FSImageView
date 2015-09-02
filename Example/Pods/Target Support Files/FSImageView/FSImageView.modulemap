@@ -1,0 +1,6 @@
+framework module FSImageView {
+  umbrella header "FSImageView-umbrella.h"
+
+  export *
+  module * { export * }
+}
