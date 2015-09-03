@@ -23,6 +23,7 @@
 @property (strong, nonatomic) UIImageView *smallImage;
 @property (strong, nonatomic) UIView *superView;
 @property (strong, nonatomic) UIImage *image;
+@property (nonatomic) CGRect ViewBounds;
 //
 //
 //

@@ -14,16 +14,17 @@
     _smallImage = ImageView;
     _superView = SuperView;
     _image = Image;
+    _ViewBounds = Bounds;
     
     // init full size image uiview
     
-    self = [super initWithFrame:CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height)];
+    self = [super initWithFrame:_ViewBounds];
     self.backgroundColor = [UIColor clearColor];
     self.alpha = 0.0;
     //[_superView addSubview:self];
     
     // init backgrand uiview
-    _imageBackgrand = [[UIView alloc] initWithFrame:Bounds];
+    _imageBackgrand = [[UIView alloc] initWithFrame:self.bounds];
     _imageBackgrand.backgroundColor = [UIColor blackColor];
     _imageBackgrand.alpha = 0.0;
     [self addSubview:_imageBackgrand];
@@ -94,8 +95,8 @@
         CGSize imgSize = _image.size;
         
         //
-        float scaleX = [UIScreen mainScreen].bounds.size.width/imgSize.width;
-        float scaleY = [UIScreen mainScreen].bounds.size.height/imgSize.height;
+        float scaleX = _ViewBounds.size.width/imgSize.width;
+        float scaleY = _ViewBounds.size.height/imgSize.height;
         
         //which side longer
         
@@ -109,7 +110,7 @@
         {
             //X先到边缘
             float imgViewHeight = imgSize.height*scaleX;
-            _scaleOriginRect = (CGRect){0,[UIScreen mainScreen].bounds.size.height/2-imgViewHeight/2,[UIScreen mainScreen].bounds.size.width,imgViewHeight};
+            _scaleOriginRect = (CGRect){0,self.frame.size.height/2-imgViewHeight/2,self.frame.size.width,imgViewHeight};
         }
     }
 }
